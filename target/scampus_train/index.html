@@ -1,0 +1,77 @@
+<html>
+	<head>
+		<title>售票处</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=no" />
+	<script type="text/javascript">
+			function sub(){
+
+				var uname = document.getElementById("uname").value;
+				var uclass = document.getElementById("uclass").value;
+				var unumber = document.getElementById("unumber").value;
+				var uflag = document.getElementById("uflag").value;
+				var ushe = document.getElementById("ushe").value;
+				ushe=escape(ushe);
+
+				uclass=escape(uclass);
+				unumber=escape(unumber);
+				uflag=escape(uflag);
+				var reg_ushe=new RegExp("^\d{3}$");
+				var reg_uflag=new RegExp("^\d{1}$");
+				var reg_uclass=new RegExp("^[0-9]*$");
+				var reg_unumber=new RegExp("^[0-9]*$");
+
+				location.href="sub?uname="+uname+"&uclass="+uclass+"&unumber="+unumber+"&uflag="+uflag+"&ushe="+ushe+"";
+			}
+
+
+            function sload() {
+
+			    var winwidth = $(window).width();
+			    $(".one").css("width",winwidth);
+                var ua = window.navigator.userAgent.toLowerCase();
+                if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+                    sp();
+                }else{
+                    location.href="error.html";
+					sp();
+                }
+            }
+		</script>
+
+		<style type="text/css">
+			div.one
+			{
+				position:fixed;
+				left:35%;
+				bottom:5px;
+			}
+
+		</style>
+
+	</head>
+	<body onload="sload()">
+
+	<div style="height: 20px"></div>
+		<div style="position:relative;width:379px;height:234px;">
+			<img src="index.jpg" alt="" width="100%" height="100%"/>
+		</div >
+		<hr>
+			<font style="font-size: 19">姓名:</font><input id="uname"  maxlength="4"  style="width:100px;height:20px"><p>
+			<font style="font-size: 19">班级:</font><input type="number" id="uclass"oninput="if(value.length>8)value=value.slice(0,8)" style="width:100px"><p>
+			<font style="font-size: 19">学号:</font><input  type="number" id="unumber" oninput="if(value.length>8)value=value.slice(0,8)" style="width:100px"><p>
+			<input type="number" id="uflag" style="width:50px" oninput="if(value.length>1)value=value.slice(0,1)"><font style="font-size: 19">号楼</font>
+			<input type="number" id="ushe" style="width:50px" oninput="if(value.length>3)value=value.slice(0,3)"><font style="font-size: 19">宿舍</font><p>
+
+<br>
+	<p>
+			<div style="text-align: center;font-size: 20px">
+				<a href="javascript:void(0)" onclick="sub()" style="text-decoration: none">确认买票</a>
+			</div>
+
+
+		<div style="text-align: center;" class="one">
+			<font  style="font-style: italic;color: #808080">&copy;明德微校园</font>
+		</div>
+	</body>
+</html>

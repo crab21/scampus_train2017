@@ -1,0 +1,79 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>出票口</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=2.0, user-scalable=no" />
+
+    <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="jquery.cookie.js"></script>
+
+    <script type="text/javascript">
+
+        function sp() {
+            var urls =  $.cookie("resultPath");
+            var htmls = '<img src="pic/'+urls+'" alt="" width="100%" height="100%"/>';
+           $("#add_div").append(htmls);
+        }
+
+
+        function sload() {
+            var ua = window.navigator.userAgent.toLowerCase();
+            if(!(ua.match(/MicroMessenger/i) == 'micromessenger')){
+//               location.href="error.html";
+                sp();
+            }else{
+                sp();
+            }
+        }
+
+
+    </script>
+
+
+    <style type="text/css">
+        div.one
+        {
+            position:fixed;
+            left:35%;
+            bottom:5px;
+        }
+
+    </style>
+</head>
+<body onload="sload()" >
+
+<div id="div_body" style="position:relative;width:379;height:234px;">
+    <div id="add_div" style="position:relative;width:379;height:234px;"></div>
+
+    <br>
+    <br>
+
+
+    <div style="text-align: center;font-size: 25px">
+        <a href="train.html"  style="text-decoration: none;">去乘车</a>
+    </div>
+    <br>
+    <br>
+    <div style="display: inline">
+        <div style="float: left">
+            &nbsp;&nbsp;&nbsp;&nbsp;&raquo;<a href="http://wx.imrcrab.com/wall/WechatWall/"  style="text-decoration: none">表白墙&nbsp;</a><p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&raquo;<a href="http://imrcrab.com/scampus_lose/lose.html?from=singlemessage&isappinstalled=0" style="text-decoration: none">失物招领</a><p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&raquo;<a href="http://mp.weixin.qq.com/s/uv1cIOEw1nQLC_tmiEbRlA" style="text-decoration: none">加入我们</a><p>
+            &nbsp;&nbsp;&nbsp;&nbsp;&raquo;<a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzA3ODkxOTYxMw==&scene=124#wechat_redirect" style="text-decoration: none">精彩回顾</a><p>
+
+        </div>
+
+        <div style="float: left">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <img src="0.jpg" style="width: 150px;height: 150px"><br>
+            <h6>长按二维码,获取更多信息</h6>
+        </div>
+    </div>
+</div>
+
+
+<div style="text-align: left;" class="one">
+    <font  style="font-style: italic;color: #808080">&copy;明德微校园</font>
+</div>
+</body>
+</html>
